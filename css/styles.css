@@ -420,21 +420,28 @@ header {
 
 .project-thumb {
   position: relative;
+  height: 294px;
+  overflow: hidden;
 }
 
 .project-text {
-  background-color: ;
   position: absolute;
-  bottom: 0;
   background: var(--projects-bg);
   color: var(--white-text);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 63px 24px;
   font-size: 18px;
   line-height: 28px;
-  opacity: 0;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+  box-sizing: border-box;
 }
 
-.project-text:hover {
-  opacity: 1;
+.project-link:hover .project-text {
+  transform: translateY(0%);
 }
 
 .project-list {
