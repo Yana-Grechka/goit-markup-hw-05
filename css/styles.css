@@ -16,6 +16,7 @@
   --projects-bg: rgba(33, 150, 243, 0.9);
   --backdrop: rgba(0, 0, 0, 0.2);
   --border-close: rgba(0, 0, 0, 0.1);
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -42,8 +43,7 @@ header {
 
 .main-nav .link {
   padding: 32px 0;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .nav-link {
@@ -198,18 +198,22 @@ header {
   padding: 6px 22px;
   border-radius: 4px;
   border: none;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic),
+    box-shadow 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .button-list:focus {
   background-color: var(--blue-text);
   color: var(--white-text);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .button-list:hover {
   background-color: var(--blue-text);
   color: var(--white-text);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .buttons {
@@ -376,8 +380,8 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms var(--cubic), fill 250ms var(--cubic),
+    transform 250ms var(--cubic);
 }
 
 .link-network:hover,
@@ -405,8 +409,7 @@ header {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: box-shadow 250ms var(--cubic), transorm 250ms var(--cubic);
 }
 
 .project > .item img {
@@ -434,10 +437,9 @@ header {
   padding: 63px 24px;
   font-size: 18px;
   line-height: 28px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
   box-sizing: border-box;
+  transition: background-color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .project-link:hover .project-text {
@@ -495,16 +497,14 @@ header {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: fill 250ms var(--cubic), border 250ms var(--cubic),
+    transform 250ms var(--cubic);
 }
 
 .clients-link:hover,
 :focus {
   fill: var(--blue-text);
   border: 1px solid var(--blue-text);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
 }
 
 .footer {
@@ -562,8 +562,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .network:not(:last-child) {
@@ -635,11 +634,13 @@ h6 {
   width: 100%;
   height: 100%;
   background: var(--backdrop);
+  transition: opacity 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  transition: opacity 250ms var(--cubic);
 }
 
 .modal {
@@ -649,10 +650,13 @@ h6 {
   transform: translate(-50%, -50%);
   padding: 40px;
   max-height: 100vh;
-  max-width: 528px;
+  width: 528px;
   background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   overflow-y: auto;
+  transition: transform 250ms var(--cubic);
 }
 
 .modal-btn {
@@ -665,7 +669,3 @@ h6 {
   border-radius: 50%;
   background-color: #ffffff;
 }
-
-/* .close {
-  fill: black;
-} */
